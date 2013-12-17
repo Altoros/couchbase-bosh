@@ -1,0 +1,24 @@
+{error_logger_mf_dir, "/var/vcap/sys/log/couchbase"}.
+{error_logger_mf_maxbytes, 10485760}.
+{error_logger_mf_maxfiles, 20}.
+{path_config_bindir, "/var/vcap/packages/couchbase/bin"}.
+{path_config_etcdir, "/var/vcap/jobs/couchbase/etc/couchbase"}.
+{path_config_libdir, "/var/vcap/packages/couchbase/lib"}.
+{path_config_datadir, "/var/vcap/store/couchbase"}.
+{path_config_tmpdir, "/var/vcap/store/couchbase/tmp"}.
+
+{nodefile, "/var/vcap/store/couchbase/couchbase-server.node"}.
+
+{loglevel_default, debug}.
+{loglevel_couchdb, info}.
+{loglevel_ns_server, debug}.
+{loglevel_error_logger, debug}.
+{loglevel_user, debug}.
+{loglevel_menelaus, debug}.
+{loglevel_ns_doctor, debug}.
+{loglevel_stats, debug}.
+{loglevel_rebalance, debug}.
+{loglevel_cluster, debug}.
+{loglevel_views, debug}.
+{loglevel_mapreduce_errors, debug}.
+{loglevel_xdcr, debug}.

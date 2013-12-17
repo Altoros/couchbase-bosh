@@ -4,3 +4,4 @@ name: couchbase
 dependencies:
 
 files:
+- couchbase/couchbase-server-community_x86_64_2.1.1.tar.bz2

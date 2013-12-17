@@ -1,0 +1,16 @@
+---
+name: couchbase
+templates:
+  couchbase_ctl.erb: bin/couchbase_ctl
+  couchbase/config: etc/couchbase/config
+  couchbase/init.sql: etc/couchbase/init.sql
+  couchbase/static_config: etc/couchbase/static_config
+  runtime.ini: etc/runtime.ini
+  couchdb/default.ini: etc/couchdb/default.ini
+  couchdb/local.ini: etc/couchdb/local.ini
+  couchdb/default.d/capi.ini: etc/couchdb/default.d/capi.ini
+  couchdb/default.d/geocouch.ini: etc/couchdb/default.d/geocouch.ini
+  default/couchdb: etc/default/couchdb
+
+packages:
+- couchbase

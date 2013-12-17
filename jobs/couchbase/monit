@@ -1,0 +1,5 @@
+check process couchbase
+  with pidfile "/var/vcap/sys/run/couchbase/couchbase-server.pid"
+  start program "/var/vcap/jobs/couchbase/bin/couchbase_ctl start"
+  stop program "/var/vcap/jobs/couchbase/bin/couchbase_ctl stop"
+  group vcap
