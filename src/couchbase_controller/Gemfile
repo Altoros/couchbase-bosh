@@ -1,0 +1,28 @@
+source 'https://rubygems.org'
+
+gem 'activesupport', '~> 4.0'
+gem 'rake'
+gem 'bcrypt-ruby'
+gem 'eventmachine', '~> 1.0.0'
+gem 'rfc822'
+gem 'steno'
+gem 'vcap-concurrency', git: 'https://github.com/cloudfoundry/vcap-concurrency.git'
+gem 'cf-message-bus', git: 'https://github.com/cloudfoundry/cf-message-bus.git'
+gem 'vcap_common', git: 'https://github.com/cloudfoundry/vcap-common.git'
+
+# These are outside the test group in order to run rake tasks
+gem 'rspec'
+gem 'ci_reporter'
+gem 'bson_ext'
+
+group :development do
+  gem 'debugger'
+  gem 'pry'
+end
+
+group :test do
+  gem 'simplecov'
+  gem 'guard-rspec'
+  gem 'guard-bundler'
+  gem 'sys-proctable'
+end

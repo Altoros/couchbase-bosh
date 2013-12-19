@@ -3,3 +3,9 @@ check process couchbase
   start program "/var/vcap/jobs/couchbase/bin/couchbase_ctl start"
   stop program "/var/vcap/jobs/couchbase/bin/couchbase_ctl stop"
   group vcap
+
+check process couchbase_controller
+  with pidfile "/var/vcap/sys/run/couchbase_controller.pid"
+  start program "/var/vcap/jobs/couchbase/bin/couchbase_controller_ctl start"
+  stop program "/var/vcap/jobs/couchbase/bin/couchbase_controller_ctl stop"
+  group vcap

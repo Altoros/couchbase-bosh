@@ -12,5 +12,21 @@ templates:
   couchdb/default.d/geocouch.ini: etc/couchdb/default.d/geocouch.ini
   default/couchdb: etc/default/couchdb
 
+  couchbase_controller_ctl.erb: bin/couchbase_controller_ctl
+  couchbase_controller.yml.erb: etc/couchbase_controller.yml
+
 packages:
 - couchbase
+- ruby
+- common
+- couchbase_controller
+
+properties:
+  nats.user:
+    description: "Username for cc client to connect to NATS"
+  nats.password:
+    description: "Password for cc client to connect to NATS"
+  nats.machines:
+    description: "Addresses of Cloud Foundry NATS server"
+  nats.port:
+    description: "IP port of Cloud Foundry NATS server"

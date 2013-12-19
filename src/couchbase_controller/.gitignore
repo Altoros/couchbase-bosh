@@ -1,0 +1,16 @@
+*~
+.idea
+.yardoc
+\#*\#
+.\#*
+.bundle
+bundler
+spec/artifacts
+ci-artifacts-dir
+ci-working-dir
+*.rbc
+*.swp
+*.pid
+vendor
+!vendor/errors
+.DS_Store

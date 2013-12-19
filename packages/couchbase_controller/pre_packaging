@@ -1,0 +1,4 @@
+set -e -x
+
+cd ${BUILD_DIR}/couchbase_controller
+bundle package --all

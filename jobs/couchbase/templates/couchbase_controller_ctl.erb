@@ -1,0 +1,59 @@
+#!/bin/bash
+
+export PATH=/var/vcap/packages/ruby/bin:$PATH
+
+PACKAGE_DIR=/var/vcap/packages/couchbase_controller
+JOB_DIR=/var/vcap/jobs/couchbase
+STORE_DIR=/var/vcap/store
+
+RUN_DIR=/var/vcap/sys/run/couchbase
+LOG_DIR=/var/vcap/sys/log/couchbase
+
+export PIDFILE=$RUN_DIR/couchbase_controller.pid
+export CONFIG_FILE=$JOB_DIR/etc/couchbase_controller.yml
+
+LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH
+
+export LANG=en_US.UTF-8
+
+source /var/vcap/packages/common/utils.sh
+
+case $1 in
+
+  start)
+    pid_guard $PIDFILE "Couchbase Controller"
+
+    mkdir -p $RUN_DIR
+    chown vcap:vcap $RUN_DIR
+
+    if [ ! -d $STORE_DIR ]; then
+      echo "ERROR: storage directory doesn't exist"
+      echo "Please add persistent disk to this job"
+      exit 1
+    fi
+
+    if [ ! -d $LOG_DIR ]; then
+      mkdir -p $LOG_DIR
+      chown vcap:vcap $LOG_DIR
+    fi
+
+    if [ ! -d $CONF_DIR ]; then
+      mkdir -p $CONF_DIR
+      chown vcap:vcap $CONF_DIR
+    fi
+
+    exec chpst -u vcap:vcap $PACKAGE_DIR/couchbase_controller/bin/couchbase_controller \
+        -c $CONFIG_FILE \
+        >>$LOG_DIR/couchbase_controller.stdout.log \
+        2>>$LOG_DIR/couchbase_controller.stderr.log
+    ;;
+
+  stop)
+    kill_and_wait $PIDFILE
+    ;;
+
+  *)
+    echo "Usage: couchbase_controller_ctl {start|stop}"
+    ;;
+
+esac

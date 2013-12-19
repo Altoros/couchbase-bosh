@@ -1,0 +1,11 @@
+---
+message_bus_uris:
+<% p("nats.machines").each do |ip| %>
+  - nats://<%= p("nats.user") %>:<%= p("nats.password") %>@<%= ip %>:<%= p("nats.port") %>
+<% end %>
+pid_filename: /var/vcap/sys/run/mongodb/mongodb_controller.pid
+
+master_node: <%= spec.index.to_i == 0 %>
+
+node_config_file: /var/vcap/store/mongodb-conf/mongodb_node.yml
+provision_config: /var/vcap/store/mongodb-conf/provision.yml

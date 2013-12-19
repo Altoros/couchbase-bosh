@@ -1,0 +1,7 @@
+---
+name: couchbase_controller
+dependencies:
+- ruby
+files:
+- couchbase_controller/{Rakefile,Gemfile,Gemfile.lock}
+- couchbase_controller/{db,lib,bin,app}/**/*

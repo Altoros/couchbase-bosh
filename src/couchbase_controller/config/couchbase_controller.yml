@@ -1,0 +1,3 @@
+---
+pid_filename: /tmp/couchbase_controller.pid
+message_bus_uri: nats://127.0.0.1:4222
