@@ -1,16 +1,16 @@
-# MongoDB deployment for BOSH
+# Couchbase deployment for BOSH
 
-This MongoDB deployment is intended for use with
+This Couchbase deployment is intended for use with
 [BOSH](https://github.com/cloudfoundry/bosh) deployment. Using this
-you can easily create and scale your MongoDB cluster
+you can easily create and scale your Couchbase cluster
 
 ## How does it help?
 
-Using this release you can create MongoDB cluster in no time
+Using this release you can create Couchbase cluster in no time
 
 ## Who can benefit from it?
 
-- Developers that want to test application with MongoDB cluster
+- Developers that want to test application with Couchbase cluster
   support
 - System Administrators / DevOps because they create and reshape
   clusters easily
@@ -28,7 +28,7 @@ Using this release you can create MongoDB cluster in no time
 use this method you don't need to install CloudFoundry, you just need
 small part of CloudFoundry (message bus).
 
-2. Create manifest for your MongoDB cluster. You can find example in
+2. Create manifest for your Couchbase cluster. You can find example in
    `examples` subdirectory.
 
 3. Upload release to BOSH. You can do this using `bosh upload release releases/<last-release-number>`
