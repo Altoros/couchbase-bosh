@@ -1,6 +1,6 @@
 # MongoDB deployment for BOSH
 
-This MongsDB deployment is intended for use with
+This MongoDB deployment is intended for use with
 [BOSH](https://github.com/cloudfoundry/bosh) deployment. Using this
 you can easily create and scale your MongoDB cluster
 
